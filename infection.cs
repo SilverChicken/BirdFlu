@@ -8,7 +8,7 @@ public class infection : MonoBehaviour {
         Debug.Log("Collision Enter");
 		if(col.gameObject.tag == "Infectable") {
 			col.gameObject.GetComponent<Infectable>().infect();
-            print("INFECTION");
+            Debug.Log("INFECTION");
 		}
 	}
 
