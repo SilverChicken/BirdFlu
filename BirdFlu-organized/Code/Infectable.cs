@@ -5,6 +5,7 @@ using UnityEngine;
 public class Infectable : MonoBehaviour {
 
 	private float infectionlevel; // if this reaches 45 then game over (starts as 45 seconds of exposure then decreases)
+	private float scaredlevel;
 	private bool infecting;
 
 
@@ -12,10 +13,14 @@ public class Infectable : MonoBehaviour {
 		if(infecting){ // adds the time of exposure since the last frame
 			Debug.Log(infectionlevel);
 			infectionlevel += Time.deltaTime *getInfectionMulti();
+			scaredlevel += Time.deltaTime *getScareMulti();
 		}
 
-		// checks if the infected person is dead due to the 	
-		if(infectionlevel > 45.0f){
+		if(scaredlevel > 45.0f ){
+			setInfecting(false);
+			 // make leave elevator
+		}
+		else if(infectionlevel > 45.0f){ // checks if the infected person is dead due to the 
 			setInfecting(false);
 			Debug.Log("end of game?");
 			Application.Quit(); // change to restart level later
@@ -35,10 +40,6 @@ public class Infectable : MonoBehaviour {
 
 	private void setInfecting(bool newVal){
 		infecting = newVal;
-	}
-
-	float getInfectionMulti(){
-		//call the lift object for this value
 	}
 
 }
