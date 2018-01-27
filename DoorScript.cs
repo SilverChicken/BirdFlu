@@ -41,8 +41,8 @@ public class DoorScript : MonoBehaviour {
         doorMoveDis = doorOpenPos - doorClosePos;
 
         //Get Sound Lengths, print them to log
-        openingTime = doorOpening.length;
-        closingTime = doorClosing.length;
+        openingTime = doorOpening.length;   //This is a time of 2.75s
+        closingTime = doorClosing.length;   //This is a time of 4.5s
         print(openingTime + " and " + closingTime);
 
         //Calculate doorMoveSpeed for opening and closing doors
