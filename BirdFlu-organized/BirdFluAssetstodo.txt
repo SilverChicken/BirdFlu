@@ -2,8 +2,8 @@
    T = Textured
 
 Humans----------------------------
-	Heads	M
-	Torso	M
+	Heads	T
+	Torso	T
 	
 Elevator--------------------------
 	Buttons	M
@@ -14,15 +14,15 @@ Elevator--------------------------
 	Floor/ceiling etc	M
 
 PC-------------------------------
-	Hands
-	Legs
+	Hands T
+	Legs  T
 
 Hallways--------------------------
 	Water coolers	M
-	Plants		M
+	Plants		T
 	Doors		M
 	Notice board	
-	Lights
+	Lights		T
 
 Abilities-------------------------
 Regular
