@@ -1,0 +1,73 @@
+** M = modelled
+   T = Textured
+
+Humans----------------------------
+	Heads	M
+	Torso	M
+	
+Elevator--------------------------
+	Buttons	M
+	Floor display	M
+	Light	
+	Door	M
+	Handrail	M
+	Floor/ceiling etc	M
+
+PC-------------------------------
+	Hands
+	Legs
+
+Hallways--------------------------
+	Water coolers	M
+	Plants		M
+	Doors		M
+	Notice board	
+	Lights
+
+Abilities-------------------------
+Regular
+	No no (cross arms)
+	Close/hold elevator doors open
+	Phone call
+	Awkward conversation
+	Standing too close to people
+A bit weird
+	Watching porn/moaning (bird stuff)
+	Farting
+	Shouting
+	Tap dancing
+Weird
+	Press alarm
+	Cussing
+	Break lights
+Extreme
+	Peeing (right click or p)
+	Vomit
+	Cut? (too much?)
+	Break the company buisness (minigame extra!)
+
+
+Sounds---------------------------
+Pressing buttons
+
+A ton of disgruntled sounds
+General sounds of humans
+
+Water cooler bubbles
+
+
+Puking
+Coughing
+Farting
+
+Texting sounds
+Phone vibrate
+Recieve message
+
+
+Meters (for development)--------
+Uglyness elevator
+Virus catching multiplier in elevator
+Security in elevator
+Sanity/illness
+
