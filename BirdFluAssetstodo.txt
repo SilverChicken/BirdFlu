@@ -1,24 +1,27 @@
+** M = modelled
+   T = Textured
+
 Humans----------------------------
-	Heads
-	Torso
+	Heads	M
+	Torso	M
 	
 Elevator--------------------------
-	Buttons
-	Floor display
-	Light
-	Door
-	Handrail
-	Floor/ceiling etc
+	Buttons	M
+	Floor display	M
+	Light	
+	Door	M
+	Handrail	M
+	Floor/ceiling etc	M
 
 PC-------------------------------
 	Hands
 	Legs
 
 Hallways--------------------------
-	Water coolers
-	Plants
-	Doors
-	Notice board
+	Water coolers	M
+	Plants		M
+	Doors		M
+	Notice board	
 	Lights
 
 Abilities-------------------------
@@ -26,6 +29,8 @@ Regular
 	No no (cross arms)
 	Close/hold elevator doors open
 	Phone call
+	Awkward conversation
+	Standing too close to people
 A bit weird
 	Watching porn/moaning (bird stuff)
 	Farting
