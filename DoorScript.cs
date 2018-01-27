@@ -13,14 +13,12 @@ public class DoorScript : MonoBehaviour {
     private float doorOpenSpeed;    //How fast the doors open
     private float doorCloseSpeed;   //How fast the doors close
 
-    private bool audioCue;  //Designates which door manages the audio, to prevent double looping of audio cues. Left door by default
+    //private bool audioCue;  //Designates which door manages the audio, to prevent double looping of audio cues. Left door by default
     public AudioClip doorOpening;
     private float openingTime;
     public AudioClip doorClosing;
     private float closingTime; 
     private AudioSource source;
-    private float volLowRange = 0.5f;
-    private float volHighRange = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -32,13 +30,15 @@ public class DoorScript : MonoBehaviour {
         {
             doorOpenPos = 6;
             doorClosePos = 2.75f;
+            doorCurrPos = 6;
             
             
         } else {    //Right Door
             doorOpenPos = -6;
             doorClosePos = -2.75f;
+            doorCurrPos = -6;
         }
-        doorMoveDis = doorOpenPos - doorClosePos;
+        doorMoveDis = doorOpenPos - doorClosePos;   //3.25
 
         //Get Sound Lengths, print them to log
         openingTime = doorOpening.length;   //This is a time of 2.75s
@@ -46,8 +46,8 @@ public class DoorScript : MonoBehaviour {
         print(openingTime + " and " + closingTime);
 
         //Calculate doorMoveSpeed for opening and closing doors
-        doorOpenSpeed = doorMoveDis / openingTime;
-        doorCloseSpeed = doorMoveDis / closingTime;
+        doorOpenSpeed = doorMoveDis / openingTime * Time.deltaTime;  //3.25 / 2.75
+        doorCloseSpeed = doorMoveDis / closingTime * Time.deltaTime;
 	}
 	
 	// Update is called once per frame
