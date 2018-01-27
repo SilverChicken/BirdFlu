@@ -1,0 +1,68 @@
+Humans----------------------------
+	Heads
+	Torso
+	
+Elevator--------------------------
+	Buttons
+	Floor display
+	Light
+	Door
+	Handrail
+	Floor/ceiling etc
+
+PC-------------------------------
+	Hands
+	Legs
+
+Hallways--------------------------
+	Water coolers
+	Plants
+	Doors
+	Notice board
+	Lights
+
+Abilities-------------------------
+Regular
+	No no (cross arms)
+	Close/hold elevator doors open
+	Phone call
+A bit weird
+	Watching porn/moaning (bird stuff)
+	Farting
+	Shouting
+	Tap dancing
+Weird
+	Press alarm
+	Cussing
+	Break lights
+Extreme
+	Peeing (right click or p)
+	Vomit
+	Cut? (too much?)
+	Break the company buisness (minigame extra!)
+
+
+Sounds---------------------------
+Pressing buttons
+
+A ton of disgruntled sounds
+General sounds of humans
+
+Water cooler bubbles
+
+
+Puking
+Coughing
+Farting
+
+Texting sounds
+Phone vibrate
+Recieve message
+
+
+Meters (for development)--------
+Uglyness elevator
+Virus catching multiplier in elevator
+Security in elevator
+Sanity/illness
+
