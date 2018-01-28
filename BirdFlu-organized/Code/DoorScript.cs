@@ -12,6 +12,9 @@ public class DoorScript : MonoBehaviour {
     public bool doorState;  //True if Open, False if Closed
     private float doorOpenSpeed;    //How fast the doors open
     private float doorCloseSpeed;   //How fast the doors close
+
+    private float floorTime;    //Time taken between floors
+    public static float levelTime; //Time taken in level
     private static float currentTime = 0f;  //Current time since it last mattered (counting interval)
 
     //private bool audioCue;  //Designates which door manages the audio, to prevent double looping of audio cues. Left door by default
@@ -55,11 +58,11 @@ public class DoorScript : MonoBehaviour {
 	void Update ()
     {
         currentTime += Time.deltaTime;
-        if (Input.GetButtonDown("Jump"))
+        if (currentTime >= floorTime && doorState == false)
         {
             openStart();
         }
-        if (Input.GetButtonDown("Fire3"))
+        if (currentTime >= floorTime && doorState == true)
         {
             closeStart();
         }
