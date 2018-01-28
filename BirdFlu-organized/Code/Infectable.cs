@@ -11,7 +11,8 @@ public class Infectable : MonoBehaviour {
 	private Vector3 nextPosition;
 	private Rigidbody rigid;
 	private bool isInLift;
-	private Lift lift;
+    private Lift lift;
+    private GameObject wayBack;
 
 	[SerializeField]
 	private GameObject[] waypoints;
@@ -40,7 +41,7 @@ public class Infectable : MonoBehaviour {
         if (scaredlevel > 45.0f)
         {
             setInfecting(false);
-            // make leave elevator
+            wayBack = GameObject.FindGameObjectWithTag("backPoint");
         }                                  
         else if (infectionlevel > 45.0f)
         {   // checks if the infected person is dead due to the 	
@@ -68,11 +69,6 @@ public class Infectable : MonoBehaviour {
 		setInfecting(true);
 	}
 
-	public void disinfect(){
-		infectionlevel = 0;
-		setInfecting(false);
-	}
-
 	private void setInfecting(bool newVal){
 		infecting = newVal;
 	}
@@ -87,6 +83,12 @@ public class Infectable : MonoBehaviour {
 		nextPosition = waypoints[currentDestination].transform.position;
 		this.transform.LookAt(nextPosition);
 	}
+
+    void goBack(){
+        Debug.Log("Adios");
+        nextPosition = wayBack.transform.position;
+        this.transform.LookAt(nextPosition);
+    }
 
 	public bool getIsInLift(){
 		return isInLift;
