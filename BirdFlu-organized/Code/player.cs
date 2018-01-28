@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     public AudioClip[] sickSound; //= new AudioClip[4];
     public Animation[] phoneMSG; //= new Animation[3];
     public Animation phoneDead;
-    public Animation sick;
+    public GameObject sick;
     public GameObject pee;
     public Lift lift;
 
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
                 lift.setInfectionMulti(lift.getInfectionMulti() + 2f);
                 lift.setScareMulti(lift.getScareMulti() + 7f);
                 peed = true;
-                var pees = Instantiate(pee, new Vector3(0, 0, 0), Quaternion.identity); //Wherever the player is
+                Instantiate(pee, new Vector3(0, 0, 0), Quaternion.identity); //Wherever the player is
                 pausetime = 3f;
             }
             else if (Input.GetKeyUp("f"))
@@ -115,7 +115,15 @@ public class Player : MonoBehaviour {
                 lift.setScareMulti(lift.getScareMulti() + 10f);
                 Index = Random.Range(0, sickSound.Length - 1);               //However many retch sounds we have
                 source.PlayOneShot(sickSound[Index], 1);
-                sick.Play();
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
+                Instantiate(sick, new Vector3(0, 0, 0), Quaternion.identity);
                 Debug.Log("sick sound");
                 pausetime = 7f;
             }
