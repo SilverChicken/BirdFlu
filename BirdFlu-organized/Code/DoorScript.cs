@@ -13,14 +13,12 @@ public class DoorScript : MonoBehaviour {
     private float doorOpenSpeed;    //How fast the doors open
     private float doorCloseSpeed;   //How fast the doors close
 
-    private bool audioCue;  //Designates which door manages the audio, to prevent double looping of audio cues. Left door by default
+    //private bool audioCue;  //Designates which door manages the audio, to prevent double looping of audio cues. Left door by default
     public AudioClip doorOpening;
     private float openingTime;
     public AudioClip doorClosing;
     private float closingTime; 
     private AudioSource source;
-    private float volLowRange = 0.5f;
-    private float volHighRange = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -31,14 +29,16 @@ public class DoorScript : MonoBehaviour {
 		if (doorID == true) //Left Door
         {
             doorOpenPos = 6;
-            doorClosePos = 2.75f;
+            doorClosePos = 2.8f;
+            doorCurrPos = 6;
             
             
         } else {    //Right Door
             doorOpenPos = -6;
-            doorClosePos = -2.75f;
+            doorClosePos = -2.8f;
+            doorCurrPos = -6;
         }
-        doorMoveDis = doorOpenPos - doorClosePos;
+        doorMoveDis = doorOpenPos - doorClosePos;   //3.25
 
         //Get Sound Lengths, print them to log
         openingTime = doorOpening.length;   //This is a time of 2.75s
@@ -46,8 +46,8 @@ public class DoorScript : MonoBehaviour {
         print(openingTime + " and " + closingTime);
 
         //Calculate doorMoveSpeed for opening and closing doors
-        doorOpenSpeed = doorMoveDis / openingTime;
-        doorCloseSpeed = doorMoveDis / closingTime;
+        doorOpenSpeed = doorMoveDis / openingTime * Time.deltaTime;  //3.25 / 2.75
+        doorCloseSpeed = doorMoveDis / closingTime * Time.deltaTime;
 	}
 	
 	// Update is called once per frame
@@ -55,13 +55,11 @@ public class DoorScript : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump"))
         {
-            doorState = true;
-            source.PlayOneShot(doorOpening, 1); //Play Opening Sound
+            openStart();
         }
         if (Input.GetButtonDown("Fire3"))
         {
-            doorState = false;
-            source.PlayOneShot(doorClosing, 1); //Play Closing Sound
+            closeStart();
         }
 
         if(doorState == true)
@@ -72,7 +70,19 @@ public class DoorScript : MonoBehaviour {
             closeDoor();
         }
 
-        transform.localPosition = new Vector3 (7, 4, doorCurrPos);
+        transform.localPosition = new Vector3 (5.7f, 0, doorCurrPos);
+    }
+
+    void openStart()
+    {
+        doorState = true;
+        source.PlayOneShot(doorOpening, 1); //Play Opening Sound
+    }
+
+    void closeStart()
+    {
+        doorState = false;
+        source.PlayOneShot(doorClosing, 1); //Play Closing Sound
     }
 
     void openDoor()
