@@ -31,12 +31,14 @@ public class Player : MonoBehaviour {
 
     void Start()
     {
+        Debug.Log("Started Player");
         source = GetComponent<AudioSource>();
     }
 
 
     void FixedUpdate()
     { // called 60 times a second
+
         if (pausetime <= 0)
         {
 
@@ -78,50 +80,50 @@ public class Player : MonoBehaviour {
                     pausetime = 2f;
                 }
             }
+            else if (Input.GetKeyUp("n"))
+            {   //Say no
 
-        }
-        else if (Input.GetKeyUp("n"))
-        {   //Say no
-
-            lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
-            lift.setScareMulti(lift.getScareMulti() + 1.5f);
-            Index = Random.Range(0, Noonoo.Length - 1);               //However many Noonoo sounds we have
-            source.PlayOneShot(Noonoo[Index], 1);
-            Debug.Log("Nono sound");
-            pausetime = 2f;
-        }
-        else if (Input.GetKeyUp("c"))
-        {
-            lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
-            lift.setScareMulti(lift.getScareMulti() + 3f);
-            Index = Random.Range(0, cough.Length - 1);               //However many cough sounds we have
-            source.PlayOneShot(cough[Index], 1);
-            Debug.Log("cough sound");
-            pausetime = 3f;
-        }
-        else if (Input.GetKeyUp("s"))
-        {
-            lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
-            lift.setScareMulti(lift.getScareMulti() + 2f);
-            Index = Random.Range(0, shout.Length - 1);               //However many shout sounds we have
-            source.PlayOneShot(shout[Index], 1);
-            Debug.Log("shout sound");
-            pausetime = 2f;
-        }
-        else if (Input.GetKeyUp("v"))
-        {
-            lift.setInfectionMulti(lift.getInfectionMulti() + 6f);
-            lift.setScareMulti(lift.getScareMulti() + 10f);
-            Index = Random.Range(0, sickSound.Length - 1);               //However many retch sounds we have
-            source.PlayOneShot(sickSound[Index], 1);
-            sick.Play();
-            Debug.Log("sick sound");
-            pausetime = 7f;
-        }
-        pausetime -= Time.deltaTime;
-        if(pausetime <= 0)
-        {
-            clickCount = 0;
+                lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
+                lift.setScareMulti(lift.getScareMulti() + 1.5f);
+                Index = Random.Range(0, Noonoo.Length - 1);               //However many Noonoo sounds we have
+                source.PlayOneShot(Noonoo[Index], 1);
+                Debug.Log("Nono sound");
+                pausetime = 2f;
+            }
+            else if (Input.GetKeyUp("c"))
+            {
+                Debug.Log("not cough sound");
+                lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
+                lift.setScareMulti(lift.getScareMulti() + 3f);
+                Index = Random.Range(0, cough.Length - 1);               //However many cough sounds we have
+                source.PlayOneShot(cough[Index], 1);
+                Debug.Log("cough sound");
+                pausetime = 3f;
+            }
+            else if (Input.GetKeyUp("s"))
+            {
+                lift.setInfectionMulti(lift.getInfectionMulti() + 0.5f);
+                lift.setScareMulti(lift.getScareMulti() + 2f);
+                Index = Random.Range(0, shout.Length - 1);               //However many shout sounds we have
+                source.PlayOneShot(shout[Index], 1);
+                Debug.Log("shout sound");
+                pausetime = 2f;
+            }
+            else if (Input.GetKeyUp("v"))
+            {
+                lift.setInfectionMulti(lift.getInfectionMulti() + 6f);
+                lift.setScareMulti(lift.getScareMulti() + 10f);
+                Index = Random.Range(0, sickSound.Length - 1);               //However many retch sounds we have
+                source.PlayOneShot(sickSound[Index], 1);
+                sick.Play();
+                Debug.Log("sick sound");
+                pausetime = 7f;
+            }
+            pausetime -= Time.deltaTime;
+            if (pausetime <= 0)
+            {
+                clickCount = 0;
+            }
         }
     }
 
