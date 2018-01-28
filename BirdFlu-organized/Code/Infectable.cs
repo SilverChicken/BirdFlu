@@ -11,6 +11,7 @@ public class Infectable : MonoBehaviour {
 	private Vector3 nextPosition;
 	private Rigidbody rigid;
 	private bool isInLift;
+	private Lift lift;
 
 	[SerializeField]
 	private GameObject[] waypoints;
